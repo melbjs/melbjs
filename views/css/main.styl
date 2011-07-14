@@ -1,0 +1,163 @@
+/**
+ * Variables  ------------------------------------------------*/
+
+/* Dimentions */
+page-width = 960px
+header-height = 194px
+
+/* CONTAINERS ------------------------------------------------*/
+
+body
+	background #f0efec url(../img/background-body.png) top repeat-x
+	color #333
+	font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+	text-align left
+
+.bounding
+	position relative
+	width page-width
+	margin 0 auto
+
+#content
+	float left
+	width 640px
+	margin-right 40px
+	padding-top 25px
+
+#side-panel
+	float left
+	width 240px
+	height 600px //this is temporary
+	margin-top -35px
+	padding 20px
+	background #e3e3e2
+
+h2
+	font-size 18px
+	color #4194d3
+	font-weight normal
+	padding-bottom 20px
+
+p
+	font-size 12px
+	line-height 1.5em
+	padding-bottom 1em
+
+a
+	color #0d92f7
+
+
+/* HEADER ----------------------------------------------------*/
+
+#header
+	height 130px
+	background url(../img/background-header.png) center top no-repeat
+
+	#logo
+		position absolute
+		top 0
+		left -2px
+
+	#main-menu
+		position absolute
+		top 84px
+		left 0
+
+		ul
+
+			li
+				float left
+				margin-right 3px
+
+				a
+					float left
+					height 36px
+					line-height 36px
+					font-size 14px
+					text-transform uppercase
+					color #FFF
+					font-weight bold
+					text-decoration none
+					text-shadow -1px -1px 0 #2879c3
+					padding-right 5px
+					background url(../img/background-tab-right.png) right -72px no-repeat
+
+					span
+						float left
+						height 36px
+						line-height 36px
+						padding 0 35px
+						background url(../img/background-tab-left.png) left -72px no-repeat
+
+				a:hover
+					background url(../img/background-tab-right.png) right -36px no-repeat
+
+					span
+						background url(../img/background-tab-left.png) left -36px no-repeat
+
+				a.active
+					background url(../img/background-tab-right.png) right 0 no-repeat
+
+					span
+						background url(../img/background-tab-left.png) left 0 no-repeat
+
+
+/* CONTENT ---------------------------------------------------*/
+
+div.article
+	position relative
+	display block
+	padding-bottom 20px
+	border-bottom 1px solid #e3e3e2
+	margin-bottom 20px
+
+	div.meta
+		position absolute
+		top 0
+		right 0
+
+		ul
+
+			li
+				float left
+				font-size 12px
+				margin-left 20px
+
+			li.author
+				color #333
+
+				a
+					color #999
+
+			li.date
+				color #666
+
+
+
+/* UTILITY CLASSES -------------------------------------------*/
+
+.image-replaced
+	text-indent -5000px
+	background-color transparent !important
+	background-repeat no-repeat !important
+	padding 0 !important
+	font-size 0 !important
+	line-height 0 !important
+
+.hidden
+	position absolute
+	left -9999px
+	height 1px
+	width 1px
+	overflow hidden
+	margin-bottom -1px
+	font-size 1px
+	line-height 1px
+
+.clearer
+	clear both
+	height 1px
+	overflow hidden
+	margin-top -1px
+	font-size 1px
+	line-height 1px

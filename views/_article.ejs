@@ -1,0 +1,15 @@
+<div class="article">
+	<h2><%- article.title %></h2>
+	<div class="meta">
+		<ul>
+			<li class="author">
+				<%- article.author.name %>
+				<a href="http://twitter.com/<%- article.author.twitterUsername %>">@<%- article.author.twitterUsername %></a>
+			</li>
+			<li class="date"><%- article.date %></li>
+		</ul>
+	</div>
+	<div class="article-content">
+		<%- article.content %>
+	</div>
+</div><!-- end article -->

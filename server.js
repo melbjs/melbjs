@@ -1,8 +1,18 @@
-var http = require('http');
+/**
+ * MelbJS Server.
+ */
 
-var server = http.createServer(function (req, res) {
-  res.writeHead(200, { "Content-Type": "text/plain" })
-  res.end("Hello world\n");
-});
+var cluster = require('cluster');
 
-server.listen(process.env.PORT || 8001);
+var port = process.env.PORT || 8001;
+
+// Using cluster for server management.
+cluster('./app')
+	.set('socket path', 'tmp/socks')
+	.use(cluster.logger('tmp/logs'))
+	.use(cluster.stats())
+	.use(cluster.pidfiles('tmp/pids'))
+	.use(cluster.cli())
+	.use(cluster.repl(8888))
+	.in('development').use(cluster.debug())
+	.listen(port);
