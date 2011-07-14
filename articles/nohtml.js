@@ -1,13 +1,13 @@
 module.exports = {
 
-	title: 'NoHtml',
+	title: 'noHtml',
 	author: {
 		name: 'Ben Birch',
 		twitterUsername: 'mobz',
 		website: 'http://mobz.org',
 	},
 	link: 'http://twitter.com/mobz',
-	date: '[Insert date here]',
-	content: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+	date: new Date(2011,5,8),
+	content: '<p>noHtml is a powerful browser templating system that completly bypasses the HTML layer and generates DOM structures from directly from javascript.</p><p><a href="http://mobz.github.com/nohtml/slides/">View Slides & Video</a><br /><a href="https://github.com/mobz/nohtml">Github Source</a></p>',
 
 };

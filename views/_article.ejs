@@ -1,13 +1,7 @@
 <div class="article">
 	<h2><%- article.title %></h2>
 	<div class="meta">
-		<ul>
-			<li class="author">
-				<%- article.author.name %>
-				<a href="http://twitter.com/<%- article.author.twitterUsername %>">@<%- article.author.twitterUsername %></a>
-			</li>
-			<li class="date"><%- article.date %></li>
-		</ul>
+			<span class="date"><%- article.date.getFullYear() + '/' + (article.date.getMonth() + 1) + '/' + article.date.getDate() %></span> - <span class="author"><%- article.author.name %> <a href="http://twitter.com/<%- article.author.twitterUsername %>">@<%- article.author.twitterUsername %></a></span>
 	</div>
 	<div class="article-content">
 		<%- article.content %>
