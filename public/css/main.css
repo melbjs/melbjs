@@ -94,23 +94,14 @@ div.article {
   border-bottom: 1px solid #e3e3e2;
   margin-bottom: 20px;
 }
-div.article div.meta {
-  position: absolute;
-  top: 0;
-  right: 0;
+div.article .meta {
+  font-size: 13px;
+  padding-bottom: 15px;
 }
-div.article div.meta ul li {
-  float: left;
-  font-size: 12px;
-  margin-left: 20px;
-}
-div.article div.meta ul li.author {
+div.article .meta .author {
   color: #333;
 }
-div.article div.meta ul li.author a {
-  color: #999;
-}
-div.article div.meta ul li.date {
+div.article .meta .date {
   color: #666;
 }
 .image-replaced {
