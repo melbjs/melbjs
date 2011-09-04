@@ -1,12 +1,12 @@
 module.exports = {
 
-	title: 'Writing games in CoffeeScript',
+	title: 'Pushing Drag\'n\'Drop to it limits with font dragr',
 	author: {
-		name: 'Ben Taylor',
-		twitterUsername: 'taybenlor',
-		url: 'http://taybenlor.com',
+		name: 'Ryan Seddon',
+		twitterUsername: 'ryanseddon',
+		url: 'http://www.thecssninja.com',
 	},
 	date: new Date(2011,7,10),
-	content: '<p>Ben Taylor talks about writing games in CoffeeScript, check out <a href="http://manypixies.com/">Too Many Pixies</a>.</p>',
+	content: '<p>Ryan Seddon talks about Drag\'n\'Drop with font dragr.</p><p><a href="http://vimeo.com/28486224">View Video</a><br /><a href="http://thecssninja.com/talks/dnd_and_friends/">View Slides</a><br /></p>',
 
 };
