@@ -14,7 +14,7 @@ files.forEach(function(file) {
 
 // Sort articles using a custom sort, by `article.date`.
 articles.sort(function(a, b) {
-	return a.date <= b.date;
+  return b.date - a.date;
 })
 
 module.exports = articles;
