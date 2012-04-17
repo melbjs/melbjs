@@ -40,7 +40,7 @@ app.get('/', function(req, res) {
 	var articles = require('./articles');
 	res.render('index', {
 		title: 'MelbJS',
-		meetupDate: 'Every second Wednesday of the month.',
+		meetupDate: '22nd May 2012',
 		articles: articles,
 	});
 });
