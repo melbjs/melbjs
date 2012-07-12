@@ -1,11 +1,20 @@
 {
-    "name": "MelbJS"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "2.4.2"
-    , "cluster": "0.6.4"
-    , "stylus": "0.13.6"
-    , "ejs": "0.4.3"
+  "author": "",
+  "name": "melbjs",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/melbjs/melbjs.git"
+  },
+  "dependencies": {
+    "express": "~2.5.9",
+    "cluster": "~0.7.7",
+    "stylus": "~0.25.0",
+    "ejs": "~0.7.1"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
   }
 }
