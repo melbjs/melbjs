@@ -1,0 +1,31 @@
+!!!
+html(lang="en")
+	head
+		title= title
+		link(rel='stylesheet', href='/css/reset.css')
+		link(rel='stylesheet', href='/css/main.css')
+	body
+		#header
+			.bounding
+				a#logo(href='/')
+					img(src='/img/logo.png', width='184', height='48', alt='Melb JS')
+
+		.bounding
+		
+			#content
+				.feature
+					p
+						h2 MelbJS is on Lanyrd
+						p
+							strong
+								| We have recently moved over to 
+								a(href='http://lanyrd.com/series/melbjs/') Lanyrd 
+								| to allow you to view past meetups, slides, videos and most importantly register
+								| for upcoming meetups. Head over to the 
+								a(href='http://lanyrd.com/series/melbjs/') MelbJS Lanryd 
+								| page and register for the next meetup.
+					
+				each article in articles
+					include includes/article
+
+			.clearer

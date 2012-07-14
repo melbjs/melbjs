@@ -7,10 +7,12 @@
     "url": "git://github.com/melbjs/melbjs.git"
   },
   "dependencies": {
-    "express": "~2.5.9",
+    "express": "~3.0.0beta6",
     "cluster": "~0.7.7",
-    "stylus": "~0.25.0",
-    "ejs": "~0.7.1"
+    "stylus": "~0.28.1",
+    "ejs": "~0.7.2",
+    "lanyrd-scraper": "~0.1.0",
+    "jade": "~0.26.3"
   },
   "devDependencies": {},
   "optionalDependencies": {},

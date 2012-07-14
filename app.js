@@ -21,9 +21,9 @@ app.configure(function(){
 	app.use(app.router);
 	app.use(express.static(__dirname + '/public'));
 
-	// Default to EJS templates.
+	// Default to Jade templates.
 	app.set('views', __dirname + '/views');
-	app.set('view engine', 'ejs');
+	app.set('view engine', 'jade');
 });
 
 app.configure('development', function(){
@@ -40,7 +40,7 @@ app.get('/', function(req, res) {
 	var articles = require('./articles');
 	res.render('index', {
 		title: 'MelbJS',
-		meetupDate: '22nd May 2012',
+		meetupDate: '8th August 2012',
 		articles: articles,
 	});
 });

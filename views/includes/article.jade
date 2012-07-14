@@ -1,0 +1,12 @@
+.article
+	h2= article.title
+
+	.meta
+			span.date= article.date.getFullYear() + '/' + (article.date.getMonth() + 1) + '/' + article.date.getDate()
+			|  - 
+			span.author= article.author.name
+			|  
+			if article.author.twitterUsername
+				a(href='http://twitter.com/'+article.author.twitterUsername) @#{article.author.twitterUsername}
+
+	.article-content!= article.content
