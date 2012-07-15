@@ -5,27 +5,99 @@ html(lang="en")
 		link(rel='stylesheet', href='/css/reset.css')
 		link(rel='stylesheet', href='/css/main.css')
 	body
-		#header
-			.bounding
+		.bounding
+
+			#header
 				a#logo(href='/')
 					img(src='/img/logo.png', width='184', height='48', alt='Melb JS')
+			
+			if event === undefined
 
-		.bounding
-		
-			#content
-				.feature
+				section
+
+					h2 Event data still loading from Lanyrd
+
+					p 
+						| Currently scraping from 
+						a(href=lanyrdUrl)= lanyrdUrl.replace('http://', '')
+						| . That may not even be the correct month, but we won't know 
+						| until we load it :) Refresh the page in a few seconds and try again.
+
+			else
+
+				section.next-event
+
+					h2 Next event
+
+					ul
+						li
+							strong When 
+							span #{event.startDate}, #{event.time}
+						li
+							strong Where 
+							span #{event.venues[0].name} - #{event.venues[0].address} 
+								a(href=event.venues[0].googleMapsUrl) (view map)
+
 					p
-						h2 MelbJS is on Lanyrd
-						p
-							strong
-								| We have recently moved over to 
-								a(href='http://lanyrd.com/series/melbjs/') Lanyrd 
-								| to allow you to view past meetups, slides, videos and most importantly register
-								| for upcoming meetups. Head over to the 
-								a(href='http://lanyrd.com/series/melbjs/') MelbJS Lanryd 
-								| page and register for the next meetup.
-					
-				each article in articles
-					include includes/article
+						a.register(href=lanyrdUrl) Register now at our Lanyrd.com
 
-			.clearer
+				section.presentations
+
+					h2 Presentations
+
+					if event.speakers.length === 0
+						p We are currently looking for presenters for the next event. 
+							a(href='http://twitter.com/melbjs') Contact us if you'd like to speak.
+					else
+						ul
+							each session in event.sessions
+								li
+									if session.speakers.length === 1 && session.speakers[0].twitterHandle
+										a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))
+											img(src='http://avatars.io/twitter/' + session.speakers[0].twitterHandle.replace('@','') + '?size=large')
+									else
+										img.no-avatar(src='http://avatars.io/twitter/melbjs_no_avatar?size=large')
+
+
+									h3
+										a(href=session.url)= session.title
+									
+									if session.speakers.length === 1
+										h4 presented by 
+											if session.speakers[0].twitterHandle
+												a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))= session.speakers[0].name
+											else
+												session.speakers[0].name
+
+				
+			section
+
+				h2 Keep the conversation going
+
+				ul
+
+					li
+						a(href='http://lanyrd.com/series/melbjs') Follow our series on Lanyrd
+					li
+						a(href='http://lanyrd.com/series/melbjs/save-to-calendar/') Add our events to your calendar
+					li
+						a(href='https://twitter.com/search/%23melbjs') Use the #MelbJS hashtag
+					li
+						a(href='http://twitter.com/melbjs') Follow or contact us on Twitter
+
+			section
+
+				h2 Want to be an active part of our community?
+
+				p
+					| We are always looking for presentations, and we love nothing more 
+					| than to hear from somebody who has never given a talk before. Have you been 
+					| using an interesting plugin, tool, framework or library? Want to 
+					| get back to basics and teach us some useful JavaScript techniques? Maybe
+					| you just want to share some of your hard-earned opinions. Whatever it is, 
+					a(href='http://twitter.com/melbjs') contact us on Twitter
+					|  to get involved in an upcoming event.
+
+					
+			//-each article in articles
+			//-	include includes/article

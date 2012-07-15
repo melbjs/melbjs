@@ -11,8 +11,9 @@
     "cluster": "~0.7.7",
     "stylus": "~0.28.1",
     "ejs": "~0.7.2",
-    "lanyrd-scraper": "~0.1.0",
-    "jade": "~0.26.3"
+    "lanyrd-scraper": "0.1.0",
+    "jade": "~0.26.3",
+    "moment": "~1.6.2"
   },
   "devDependencies": {},
   "optionalDependencies": {},

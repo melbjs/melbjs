@@ -34,15 +34,60 @@ app.configure('production', function(){
 	app.use(express.errorHandler());
 });
 
+// Load event data from Lanyrd
+var lanyrd = require('lanyrd-scraper');
+var moment = require('moment');
+
+// Start by scraping this month. We may need to add a month and rescrape it the event has already happened.
+var scrapeDate = moment();
+var months = 'january february march april may june july august september october november december'.split(' ');
+
+var eventData;
+var lanyrdUrl;
+var scrape = function() {
+	lanyrdUrl = 'http://lanyrd.com/' + scrapeDate.year() + '/melbjs-' + months[scrapeDate.month()];
+
+	lanyrd.scrape(lanyrdUrl, function(err, data) {
+		var melbJsDateAt10pm;
+
+		if (data) {
+			melbJsDateAt10pm = moment(new Date(data.startDate)).hours(22).toDate();
+
+			if (new Date() < melbJsDateAt10pm) {
+				eventData = data;
+			} else {
+				// Set the scrape date to the first of next month
+				scrapeDate = moment().date(1).add('months', 1);
+				scrape();
+			}
+		} else {
+			// If scraping fails, try again in 30 seconds
+			setTimeout(scrape, 1000 * 30);
+		}
+	});
+}
+
+// Scrape event details every 30 minutes
+scrape();
+setInterval(scrape, 1000 * 60 * 30);
+
 // Routes
 
 app.get('/', function(req, res) {
-	var articles = require('./articles');
+	//var articles = require('./articles');
+
 	res.render('index', {
 		title: 'MelbJS',
-		meetupDate: '8th August 2012',
-		articles: articles,
+		lanyrdUrl: lanyrdUrl,
+		event: eventData//,
+		//articles: articles
 	});
+	
+});
+
+app.get('/scrape', function(req, res) {
+	scrape();
+	res.send('Refreshing event data from Lanyrd.');
 });
 
 module.exports = app;

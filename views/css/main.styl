@@ -2,65 +2,72 @@
  * Variables  ------------------------------------------------*/
 
 /* Dimentions */
-page-width = 960px
-header-height = 194px
+page-width = 640px
+header-height = 100px
 
 /* CONTAINERS ------------------------------------------------*/
 
 body
-	background #f0efec url(../img/background-body.png) top repeat-x
 	color #333
 	font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+	line-height 1.4em
 	text-align left
+	padding 40px
+	padding-bottom 80px
 
 .bounding
 	position relative
-	width page-width
+	max-width page-width
 	margin 0 auto
 
-#content
-	float left
-	width 640px
-	margin-right 40px
-	padding-top 25px
-
-#side-panel
-	float left
-	width 240px
-	height 600px //this is temporary
-	margin-top -35px
-	padding 20px
-	background #e3e3e2
+section
+	padding-bottom 50px
 
 h2
-	font-size 18px
-	color #4194d3
+	font-size 24px
+	line-height 1.3em
+	color #777
 	font-weight normal
-	padding-bottom 20px
+	padding-bottom 24px
 
 h3
-	font-size 15px
-	padding-bottom 10px
+	font-size 16px
+	padding-bottom 20px
+
+h4
+	font-weight normal
 
 p
-	font-size 14px
+	max-width 460px
 	line-height 1.5em
-	padding-bottom 1em
+	padding-bottom 2em
 
 a
-	color #0d92f7
+	color #1B89DD
+	text-decoration none
+
+ul
+	margin-bottom 30px
+
+p:last-child
+ul:last-child
+	margin-bottom 0
+	padding-bottom 0
+
+li
+	margin-bottom 10px
 
 
 /* HEADER ----------------------------------------------------*/
 
 #header
-	height 130px
-	background url(../img/background-header.png) center top no-repeat
 
 	#logo
-		position absolute
-		top 0
-		left -2px
+		display block
+		position relative
+		left -4px
+		margin-top 10px
+		margin-bottom 50px
 
 	#main-menu
 		position absolute
@@ -108,6 +115,13 @@ a
 
 /* CONTENT ---------------------------------------------------*/
 
+a.register
+	display inline-block
+	color #fff
+	background-color #1B89DD
+	border-radius 8px
+	padding 6px 16px
+
 div.article
 	position relative
 	display block
@@ -125,10 +139,35 @@ div.article
 		.date
 			color #666
 
-.feature
-	background-color #ccc
-	padding 20px
-	margin-bottom 20px
+section.next-event
+	margin-bottom 30px
+
+	li strong
+		display inline-block
+		width 60px
+
+section.presentations
+	ul
+		margin-top 4px
+
+		li
+			overflow hidden
+			padding-bottom 10px
+
+			h3
+				padding-bottom 10px
+
+		img
+			float left
+			width 64px
+			height 64px
+			margin 0 14px 14px 0
+			border-radius 8px
+
+		img.no-avatar
+			width 0
+			height 0
+			border 32px solid #f0f0f0
 
 /* UTILITY CLASSES -------------------------------------------*/
 
