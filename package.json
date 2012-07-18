@@ -20,7 +20,6 @@
   "engines": {
     "node": "~0.8"
   },
-  "subdomain": "melbjs-new",
   "scripts": {
     "start": "server.js"
   }
