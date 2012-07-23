@@ -13,7 +13,8 @@
     "ejs": "~0.7.2",
     "lanyrd-scraper": "0.1.0",
     "jade": "~0.26.3",
-    "moment": "~1.6.2"
+    "moment": "~1.6.2",
+    "twitface": "~0.1.0"
   },
   "devDependencies": {},
   "optionalDependencies": {},

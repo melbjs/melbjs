@@ -4,6 +4,7 @@
 
 var express = require('express');
 var stylus = require('stylus');
+var twitface = require('twitface');
 var app = express.createServer();
 
 // Configuration
@@ -44,16 +45,37 @@ var months = 'january february march april may june july august september octobe
 
 var eventData;
 var lanyrdUrl;
+var avatars = {};
 var scrape = function() {
 	lanyrdUrl = 'http://lanyrd.com/' + scrapeDate.year() + '/melbjs-' + months[scrapeDate.month()];
 
 	lanyrd.scrape(lanyrdUrl, function(err, data) {
 		var melbJsDateAt10pm;
+		var speakers;
 
 		if (data) {
 			melbJsDateAt10pm = moment(new Date(data.startDate)).hours(22).toDate();
 
 			if (new Date() < melbJsDateAt10pm) {
+				// Create an array of speakers' Twitter handles
+				speakers = data.speakers.filter(function(speaker){
+						return speaker.twitterHandle !== undefined;
+					}).map(function(speaker){
+						return speaker.twitterHandle.replace('@','');
+					});
+
+				// Load avatar URLs and populate the 'avatars' hash
+				twitface.load(speakers, 'reasonably_small', function(err, urls) {
+					if (err) {
+						return;
+					}
+
+					urls.forEach(function(url, i) {
+						var speakerName = speakers[i];
+						avatars[speakerName] = url;
+					});
+				});
+
 				eventData = data;
 			} else {
 				// Set the scrape date to the first of next month
@@ -79,7 +101,8 @@ app.get('/', function(req, res) {
 	res.render('index', {
 		title: 'MelbJS',
 		lanyrdUrl: lanyrdUrl,
-		event: eventData//,
+		event: eventData,
+		avatars: avatars//,
 		//articles: articles
 	});
 	

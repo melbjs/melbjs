@@ -58,7 +58,7 @@ html(lang="en")
 								li
 									if session.speakers.length === 1 && session.speakers[0].twitterHandle
 										a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))
-											img(src='http://avatars.io/twitter/' + session.speakers[0].twitterHandle.replace('@','') + '?size=large')
+											img(src=avatars[session.speakers[0].twitterHandle.replace('@','')])
 									else
 										img.no-avatar(src='http://avatars.io/twitter/melbjs_no_avatar?size=large')
 
