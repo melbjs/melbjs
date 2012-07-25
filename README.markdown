@@ -1,7 +1,11 @@
-#### MelbJS | http://melbjs.com
-The Melbourne Javascript Meetup Website
+## [MelbJS](http://melbjs.com)
 
-This repo is the source behind the meetup website. The website lists previous presentations, upcoming event info and a bunch of other javascript related goodness. For more details about the meetup visit http://melbjs.com
+The Melbourne JavaScript Meetup Website.
 
-#### Contribute
-If you'd like to help make the website even more awesome tweet @melbjs or hunt down an existing github contributor at the meetup :)
+For more details about the meetup visit [melbjs.com](http://melbjs.com)
+
+## Contribute
+
+If you have any bug fixes or minor improvements, feel free to send us a pull request.
+
+For any large changes, please contact [@melbjs](http://twitter.com/melbjs) with your ideas, or send us a link to your shiny new fork!
