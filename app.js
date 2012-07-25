@@ -61,7 +61,7 @@ var scrape = function() {
 				speakers = data.speakers.filter(function(speaker){
 						return speaker.twitterHandle !== undefined;
 					}).map(function(speaker){
-						return speaker.twitterHandle.replace('@','');
+						return speaker.twitterHandle;
 					});
 
 				// Load avatar URLs and populate the 'avatars' hash
