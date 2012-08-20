@@ -31,7 +31,10 @@ html(lang="en")
 
 				section.next-event
 
-					h2 Next event
+					h2= event.title === 'MelbJS' ? 'Next event' : event.title
+
+					if event.tagline
+						p= event.tagline
 
 					ul
 						li
@@ -43,7 +46,12 @@ html(lang="en")
 								a(href=event.venues[0].googleMapsUrl) (view map)
 
 					p
-						a.register(href=lanyrdUrl) Register for this event at Lanyrd.com
+						// We'll remove this check after the YOW! Night edition of MelbJS
+						if (/YOW/.test(event.title))
+							| Registrations are opening soon. 
+							a(href='http://twitter.com/melbjs') Stay tuned.
+						else
+							a.register(href=lanyrdUrl) Register for this event at Lanyrd.com
 
 				section.presentations
 
