@@ -58,23 +58,24 @@ html(lang="en")
 					else
 						ul
 							each session in event.sessions
-								li
-									if session.speakers.length === 1 && session.speakers[0].twitterHandle
-										a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))
-											img(src=avatars[session.speakers[0].twitterHandle.replace('@','')])
-									else
-										img.no-avatar(src='http://avatars.io/twitter/melbjs_no_avatar?size=large')
+								if session.title !== 'TBA'
+									li
+										if session.speakers.length === 1 && session.speakers[0].twitterHandle
+											a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))
+												img(src=avatars[session.speakers[0].twitterHandle.replace('@','')])
+										else
+											img.no-avatar(src='http://avatars.io/twitter/melbjs_no_avatar?size=large')
 
 
-									h3
-										a(href=session.url)= session.title
-									
-									if session.speakers.length === 1
-										h4 presented by 
-											if session.speakers[0].twitterHandle
-												a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))= session.speakers[0].name
-											else
-												session.speakers[0].name
+										h3
+											a(href=session.url)= session.title
+										
+										if session.speakers.length === 1
+											h4 presented by 
+												if session.speakers[0].twitterHandle
+													a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))= session.speakers[0].name
+												else
+													session.speakers[0].name
 
 				
 			section
