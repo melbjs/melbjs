@@ -46,11 +46,7 @@ html(lang="en")
 								a(href=event.venues[0].googleMapsUrl) (view map)
 
 					p
-						// We'll remove this check after the YOW! Night edition of MelbJS
-						if (/YOW/.test(event.title))
-							a.register(href='http://ynmelsept2012.eventbrite.com.au/') Register for this event at Eventbrite
-						else
-							a.register(href=lanyrdUrl) Register for this event at Lanyrd.com
+						a.register(href=lanyrdUrl) Register for this event at Lanyrd.com
 
 				section.presentations
 
