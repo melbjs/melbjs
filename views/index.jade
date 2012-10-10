@@ -43,7 +43,7 @@ html(lang="en")
 						li
 							strong Where 
 
-							if event.venues.length > 0
+							if event.venues.length > 0 && event.venues[0].address.trim() !== ''
 								span #{event.venues[0].name} - #{event.venues[0].address} 
 									a(href=event.venues[0].googleMapsUrl) (view map)
 							else
