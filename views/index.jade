@@ -42,8 +42,15 @@ html(lang="en")
 							span #{event.startDate}, #{event.time}
 						li
 							strong Where 
-							span #{event.venues[0].name} - #{event.venues[0].address} 
-								a(href=event.venues[0].googleMapsUrl) (view map)
+
+							if event.venues.length > 0
+								span #{event.venues[0].name} - #{event.venues[0].address} 
+									a(href=event.venues[0].googleMapsUrl) (view map)
+							else
+								span 
+									| Venue to be announced. Stay tuned, or 
+									a(href='http://twitter.com/melbjs') follow us on Twitter
+									| .
 
 					p
 						a.register(href=lanyrdUrl) Register for this event at Lanyrd.com
