@@ -1,0 +1,99 @@
+*
+	box-sizing border-box
+
+body
+	overflow hidden
+
+section
+	width 800px
+	height 600px
+	position absolute
+	top 50%
+	left 50%
+	margin-left (-800/2)px
+	margin-top (-600/2)px
+
+	&.title img
+		width 800*0.8px
+		height 220*0.8px
+		position absolute
+		top 50%
+		left 50%
+		margin-left -(800*0.8/2)px
+		margin-top -(220*0.8/2)px
+
+	&.sponsor
+		text-align center
+
+		&.aconex
+			padding-top 180px
+
+			img
+				width 480px
+				margin-top 24px
+
+		&.thoughtworks
+			padding-top 180px
+
+			img
+				width 740px
+
+		h4
+			font-size 24px
+			position relative
+
+	&.presentations
+
+		ul
+			li
+				padding-top 190px
+				width 660px
+
+				h3
+					font-size 52px
+					line-height 52px
+					padding-top 14px
+
+				h4
+					font-size 24px
+					line-height 32px
+
+					a
+						color #606060	
+
+				img
+					width 192px
+					height 192px
+					border-radius 18px
+					margin-right 42px
+
+.bespoke-parent
+	perspective 600
+	position absolute
+	top 0
+	right 0
+	left 0
+	bottom 0
+
+section
+	transform none
+	transform-origin 50% 50% -800px
+	transition none
+	opacity 0
+
+	&.bespoke-slide
+		transition all .5s ease
+		opacity 0
+	
+	&.bespoke-active
+		opacity 1
+
+	&.bespoke-inactive
+		opacity 0
+
+	&.bespoke-before
+		transform rotateY(-90deg)
+
+	&.bespoke-after
+		transform rotateY(90deg)
+

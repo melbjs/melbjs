@@ -108,6 +108,14 @@ app.get('/', function(req, res) {
 	
 });
 
+app.get('/welcome', function(req, res) {
+	res.render('welcome', {
+		title: 'Welcome to MelbJS',
+		event: eventData,
+		avatars: avatars
+	});
+});
+
 app.get('/scrape', function(req, res) {
 	scrape();
 	res.send('Refreshing event data from Lanyrd.');
