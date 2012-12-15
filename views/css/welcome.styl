@@ -5,13 +5,13 @@ body
 	overflow hidden
 
 section
-	width 800px
-	height 600px
+	width 700px
+	height 400px
 	position absolute
 	top 50%
 	left 50%
-	margin-left (-800/2)px
-	margin-top (-600/2)px
+	margin-left (-700/2)px
+	margin-top (-400/2)px
 
 	&.title img
 		width 800*0.8px
@@ -26,27 +26,30 @@ section
 		text-align center
 
 		&.aconex
-			padding-top 180px
+			padding-top 80px
 
 			img
 				width 480px
 				margin-top 24px
 
 		&.thoughtworks
-			padding-top 180px
+			padding-top 80px
 
 			img
 				width 740px
+				position relative
+				left -14px
 
 		h4
 			font-size 24px
 			position relative
+			z-index 1
 
 	&.presentations
 
 		ul
 			li
-				padding-top 190px
+				padding-top 90px
 				width 660px
 
 				h3
@@ -77,12 +80,10 @@ section
 
 section
 	transform none
-	transform-origin 50% 50% -800px
-	transition none
 	opacity 0
 
 	&.bespoke-slide
-		transition all .5s ease
+		transition all 1s ease
 		opacity 0
 	
 	&.bespoke-active
@@ -92,8 +93,8 @@ section
 		opacity 0
 
 	&.bespoke-before
-		transform rotateY(-90deg)
+		transform translateX(-700px) rotateY(-90deg) translateX(-700px)
 
 	&.bespoke-after
-		transform rotateY(90deg)
+		transform translateX(700px) rotateY(90deg) translateX(700px)
 
