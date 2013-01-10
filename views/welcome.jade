@@ -21,6 +21,17 @@ html(lang="en")
 									img(src=avatars[session.speakers[0].twitterHandle.replace('@','')])
 							else
 								img.no-avatar(src='http://avatars.io/twitter/melbjs_no_avatar?size=large')
+
+							h3
+								a(href=session.url)= session.title
+							
+							if session.speakers.length === 1
+								h4 
+									if session.speakers[0].twitterHandle
+										a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))= session.speakers[0].name
+									else
+										session.speakers[0].name
+			
 			section.sponsor.campjs
 				img(src='/img/campjs/slide0.png', alt='CampJS will be awesome')
 			section.sponsor.campjs
@@ -34,17 +45,6 @@ html(lang="en")
 			section.sponsor.campjs
 				h2.sexy-link
 					a(href='http://campjs.com') campjs.com
-
-
-							h3
-								a(href=session.url)= session.title
-							
-							if session.speakers.length === 1
-								h4 
-									if session.speakers[0].twitterHandle
-										a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))= session.speakers[0].name
-									else
-										session.speakers[0].name
 
 			section.sponsor.aconex
 				h4 Venue and Beer Sponsor
