@@ -14,7 +14,7 @@ html(lang="en")
 
 			each session in event.sessions.filter(function(session){ return session.title !== 'TBA' })
 				section.presentations
-					ul		
+					ul
 						li
 							if session.speakers.length === 1 && session.speakers[0].twitterHandle
 								a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))
@@ -31,20 +31,6 @@ html(lang="en")
 										a(href='http://lanyrd.com/profile/' + session.speakers[0].twitterHandle.replace('@',''))= session.speakers[0].name
 									else
 										session.speakers[0].name
-			
-			section.sponsor.campjs
-				img(src='/img/campjs/slide0.png', alt='CampJS will be awesome')
-			section.sponsor.campjs
-				img(width="800", height="600", src='/img/campjs/slide3.png', alt='CampJS will be awesome')
-			section.sponsor.campjs
-				img(width="800", height="600", src='/img/campjs/slide1.png', alt='CampJS will be awesome')
-			section.sponsor.campjs
-				img(width="800", height="600", src='/img/campjs/slide5.png', alt='CampJS will be awesome')
-			section.sponsor.campjs
-				img(width="800", height="600", src='/img/campjs/slide4.png', alt='CampJS will be awesome')
-			section.sponsor.campjs
-				h2.sexy-link
-					a(href='http://campjs.com') campjs.com
 
 			section.sponsor.aconex
 				h4 Venue and Beer Sponsor
