@@ -5,7 +5,7 @@
 	var presentation;
 
 	function init() {
-		window.presentation = presentation = bespoke.from('article');
+		window.presentation = presentation = bespoke.horizontal.from('article');
 	}
 
 }());
